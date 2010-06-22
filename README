@@ -20,3 +20,8 @@ Most deps are not mavenized so you'll need the following:
 - org.springframework.context-3.0.2.RELEASE.jar
 - org.springframework.core-3.0.2.RELEASE.jar
 - org.springframework.expression-3.0.2.RELEASE.jar
+
+Build and run:
+
+$ lein compile-java && lein hadoop
+$ hadoop jar example.cascading.spring.EntryPoint

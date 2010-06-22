@@ -1,0 +1,27 @@
+# cascading_spring
+
+Sample cascading application initialized through DI with Spring
+
+## Usage
+
+Most deps are not mavenized so you'll need the following:
+
+- cascading-core-1.0.18.jar
+- cascading-xml-1.0.18.jar
+- clojure-1.1.0.jar
+- clojure-contrib-1.1.0.jar
+- commons-lang-2.5.jar
+- hadoop-core-0.18.3.jar
+- jgrapht-0.8.1.jar
+- lein-hadoop-0.0.1.jar
+- lein-javac-0.0.2-20091216.162623-1.jar
+- org.springframework.asm-3.0.2.RELEASE.jar
+- org.springframework.beans-3.0.2.RELEASE.jar
+- org.springframework.context-3.0.2.RELEASE.jar
+- org.springframework.core-3.0.2.RELEASE.jar
+- org.springframework.expression-3.0.2.RELEASE.jar
+
+Build and run:
+
+$ lein compile-java && lein hadoop
+$ hadoop jar example.cascading.spring.EntryPoint

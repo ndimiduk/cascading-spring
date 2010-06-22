@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- Source, Destination paths -->
+
+	<bean id="pathToFoos" class="java.lang.String">
+		<constructor-arg value="path/to/foos.csv" />
+	</bean>
+
+	<bean id="pathToBars" class="java.lang.String">
+		<constructor-arg value="path/to/bars.csv" />
+	</bean>
+
+	<bean id="pathToOutput" class="java.lang.String">
+		<constructor-arg value="path/to/output" />
+	</bean>
+
+	<!-- Schemes, Taps, etc. -->
+
+	<bean id="fooScheme" class="cascading.scheme.TextLine" />
+	<bean id="barScheme" class="cascading.scheme.TextLine" />
+	<bean id="dstScheme" class="cascading.scheme.TextLine" />
+
+	<bean id="fooTap" class="cascading.tap.Hfs">
+		<constructor-arg ref="fooScheme" />
+		<constructor-arg ref="pathToFoos"/>
+		<constructor-arg value="#{ T(Boolean).TRUE }"/>
+	</bean>
+
+	<bean id="barTap" class="cascading.tap.Hfs">
+		<constructor-arg ref="barScheme" />
+		<constructor-arg ref="pathToBars"/>
+		<constructor-arg value="#{ T(Boolean).TRUE }"/>
+	</bean>
+
+	<bean id="destTap" class="cascading.tap.Hfs">
+		<constructor-arg ref="dstScheme" />
+		<constructor-arg ref="pathToOutput"/>
+		<constructor-arg value="#{ T(Boolean).TRUE }"/>
+	</bean>
+
+</beans>

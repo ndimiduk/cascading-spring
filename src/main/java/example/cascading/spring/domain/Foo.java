@@ -1,4 +1,4 @@
-package cascading.spring.example.domain;
+package example.cascading.spring.domain;
 
 public class Foo {
 

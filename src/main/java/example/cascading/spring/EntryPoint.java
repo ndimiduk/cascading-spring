@@ -1,4 +1,4 @@
-package cascading.spring.example;
+package example.cascading.spring;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -16,10 +16,10 @@ import cascading.operation.regex.RegexGenerator;
 import cascading.pipe.CoGroup;
 import cascading.pipe.Each;
 import cascading.pipe.Pipe;
-import cascading.spring.example.domain.Bar;
-import cascading.spring.example.domain.Foo;
 import cascading.tap.Tap;
 import cascading.tuple.Fields;
+import example.cascading.spring.domain.Bar;
+import example.cascading.spring.domain.Foo;
 
 public class EntryPoint {
 
